@@ -1,0 +1,394 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e79085, #d4bfeb);  
+    line-height: 1.6;
+    color: rgb(36, 118, 172);   
+     
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;  
+    background: rgb(36, 118, 172);
+    color: white;
+    position: relative; /* Pour gérer la position absolue si nécessaire */ 
+}
+
+/* logo */
+.logo{ 
+    width: 180px; 
+    height: 80px;   
+    margin-left: 11px; 
+    border-radius: 8px; 
+    transition: color 0.3s, transform 0.3s; 
+}
+.logo:hover {  
+    transform: scale(1.2);
+}
+
+/* bar de navigation */ 
+
+/* Icône hamburger (initialement masquée) */
+.menu-hamburger {
+    display: none;    
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;  
+    right: 2rem; /* Toujours à droite, 2rem du bord */
+    top: 50%; /* Centré verticalement */ 
+    transform: translateY(-50%); /* Ajustement pour centrer parfaitement */ 
+} 
+
+/* Liste de navigation (ul) */ 
+nav ul {
+    display: flex;
+    list-style: none;  
+    margin: 0;
+    padding: 0; 
+}
+
+/* Lien de navigation */ 
+nav ul li {
+    margin: 0 1rem; 
+}
+
+/* Lien au survol */ 
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, transform 0.5s;  
+} 
+
+nav ul li a:hover {
+    color: #6d36ad;
+    transform: scale(0.5);  
+}
+
+nav ul {
+    display: none; /* Par défaut, le menu est caché */
+}
+
+nav ul.show {
+    display: flex; /* Afficher le menu en mode mobile */
+} 
+
+main section {
+    padding: 2rem;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+    .menu-hamburger {
+        display: block; /* Afficher le menu hamburger sur petit écran */
+        justify-content: right; 
+
+    }
+
+    nav ul {
+        display: none; /* Masquer la liste de navigation */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgb(72, 163, 185);
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    nav ul.show {
+        display: flex; /* Afficher le menu lorsque la classe "show" est ajoutée */
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+} 
+
+/* photo */ 
+.photo-profil{
+    width: 250px; 
+    height: 400px; 
+    border-radius: 8px;   
+}
+
+/* Bouton de téléchargement */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #0077b5;
+    text-decoration: none; 
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #005582; /* Bleu foncé au survol */
+    transform: scale(1.05);
+}
+
+
+
+/* Galerie */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 10px; /* Espacement entre les éléments */
+    justify-items: center; /* Centrer horizontalement les projets */
+    margin: 20px auto; /* Centrer toute la galerie horizontalement */ 
+}
+
+.projet {
+    text-align: center; /* Centrer le contenu dans chaque projet */
+    background-color: #5db5df; 
+    padding: 1rem;
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 8px; /* Coins arrondis */
+    width: 100%; /* Ajuster la largeur au conteneur */ 
+    max-width: 450px; /* Largeur maximale d’un projet */ 
+    transition: transform 0.3s; 
+}
+
+.projet:hover {
+    transform: scale(1.05); 
+}
+
+.projet img {
+    max-width: 100%; /* Images responsives */
+    height: auto; 
+    border-radius: 8px; /* Coins arrondis pour l'image */
+} 
+.galerie h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.galerie p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(87, 159, 201, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgb(226, 152, 147);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Compétences */
+#competences {  
+    margin: 2rem auto; 
+    margin-top: 5px; 
+    max-width: 1200px; /* Largeur max de la section */
+    padding: 1rem;
+    justify-content: space-between; /* Espacement entre les colonnes */
+    flex-wrap: wrap; /* Permet de retourner à la ligne sur petits écrans */
+    display: flex; /* Permet de positionner les colonnes côte à côte */
+    align-items: flex-start; /* Alignement vertical en haut */
+    gap: 2rem; /* Espacement entre les colonnes */ 
+    border: 1px solid whitesmoke; 
+    border-radius: 8px;   
+}
+
+/* Colonnes de compétences */
+#web_coding_skill, #general_coding_skill { 
+    flex: 1; /* Les deux colonnes prennent une largeur égale */
+    display: flex;
+    flex-direction: column; /* Les compétences sont empilées dans chaque colonne */
+    gap: 20px; /* Espace entre les compétences */ 
+}
+
+/* progress bar */ 
+.skill { 
+    margin-bottom: 1rem; /* Espacement entre chaque compétence */ 
+}
+
+.progress { 
+    background: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+    width: 90%;    
+}
+
+.progress-bar {
+    height: 100%; 
+    background: #1ec054;
+    transition: width 1s;
+}
+ 
+/* Responsiveness : empiler les colonnes sur petits écrans */
+@media (max-width: 768px) {
+    #competences {
+        flex-direction: column; /* Colonnes empilées */
+        gap: 1rem; /* Réduction de l'espacement */
+    }
+} 
+
+
+/* form */ 
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+label {
+    font-weight: 600;   
+    font-size: 20px;   
+} 
+
+input { 
+    font-size: 20px; 
+    padding: 10px;
+    border-radius: 8px; 
+    border: 1px solid #ddd; 
+    outline: none;
+}
+
+
+/* contact */ 
+#contact{ /* inclus id: form-contact*/ 
+    margin: 2rem auto; 
+    margin-top: 5px; 
+    max-width: 1200px; 
+    padding: 1rem;   
+    border: 1px solid whitesmoke; 
+    border-radius: 8px;   
+} 
+
+/* Section Réseaux Sociaux */
+.reseaux-sociaux {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-link {
+    font-size: 2rem;
+    color: #333;
+    transition: color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    color: #0077b5; /* Exemple : Couleur pour LinkedIn */
+    transform: scale(1.2);
+}
+
+/* Erreur et Succes message */ 
+.error{
+    color: rgb(105, 19, 19);
+    font-size: 12px;
+    margin-bottom: 10px; 
+}
+
+.succes{
+    color: rgb(26, 107, 26); 
+    font-size: 20px; 
+    margin-bottom: 10px; 
+}
+
+
+/* button */ 
+button {
+    background-color: #299c67;
+    color: white;
+    border: none; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 20px;
+    border-radius: 8px; 
+    margin: 20px auto; /* Centrage horizontal avec espacement vertical */  
+    font-size: 20px; 
+}
+
+button:hover {
+    background-color: #2bb17e; 
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* dark mode */ 
+#toggle-dark-mode{
+    width: max-content; 
+    background-color: #000000; 
+    display: block; 
+    margin: 20px auto; 
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #581810, #27133d); 
+    color: white;
+}
+
+body.dark-mode header {
+    background-color: #811212;
+}  
+
+body.dark-mode footer { 
+    background-color: #811212;  
+} 
+
+body.dark-mode .btn{
+    background-color: #27133d;
+}
+
+body.dark-mode .projet{
+    background-color: #27133d; 
+}
+
+body.dark-mode .galerie h3 { 
+    color: white;
+}
+
+body.dark-mode .galerie p {  
+    color: white;
+}
+
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgb(36, 118, 172); 
+    color: white;
+}

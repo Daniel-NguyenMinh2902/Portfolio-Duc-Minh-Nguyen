@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio - Duc Minh Nguyen</title> 
+        <link href="style/style.css" rel="stylesheet">  
+    </head>
+
+    <body>
+        <!-- header: un logo + un menu permettant la navigation sur le site -->
+        <header> 
+            <!--Logo-->
+            <div>
+                <a href="https://www.sorbonne-universite.fr" target="_blank" class="social-link">
+                    <img src="image/sorbonne.jpg" alt="Sorbonne Université logo" class="logo">  
+                </a> 
+            </div>
+
+            <!--Menu des navigations-->
+            <div class="menu-hamburger">&#9776;</div> 
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#a-propos">À propos</a></li> 
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#contact">Contact</a></li> 
+                </ul>
+            </nav> 
+        </header>
+
+        <!--Sections: A propos de moi, Projets, Competences, Contact-->
+        <main>
+            <section id="accueil" style="text-align: center;"> 
+                <h1>What's up human !!!</h1>  
+                <p>Je suis Duc Minh Nguyen, étudiant en deuxième année de Licence d'Informatique à Sorbonne Université.</p>  
+                <img src="image/myphoto.jpg" alt="Photo de profil" class="photo-profil"><br> 
+                <a href="image/new_DucMinh_Nguyen_CV.pdf" class="btn">Télécharger mon CV</a> 
+            </section> 
+
+            <!--A propos de moi-->
+            <section id="a-propos">
+                <h2 style="text-align: center;">À propos de moi</h2> 
+                <p>Actuellement 20 ans, je suis un mec tranquille, gentil ayant des beaux rêves. J'adore la photographie, le football, faire les voyages avec mes amis et j'ai un amour avec la programmation.</p>
+            </section> 
+
+            <!--Projet--> 
+            <section id="projets">
+                <h2 style="text-align: center;">Projets</h2> 
+                <div class="galerie">
+                    <div class="projet" data-id="1"> 
+                        <img src="image/product_list.png" alt="Projet 1">
+                        <h3>Product List of a Shop</h3> 
+                        <p>Les produits disponibles dans un magasin.</p> 
+                    </div> 
+
+                    <div class="projet" data-id="2">
+                        <img src="image/annee_bissextile.png" alt="Projet 2"> 
+                        <h3>Année Bissextile Verification & Formulaire Client</h3> 
+                        <p>1: Saisir un an, verifier si c'est un an bissextile en cliquant sur le bouton.</p>
+                        <p>2: Une formulaire de client.</p>
+                    </div>
+
+                    <div class="projet" data-id="3"> 
+                        <img src="image/Ecosystem.png" alt="Projet 3"> 
+                        <h3>Ecosysteme</h3> 
+                        <p>Creer un ecosysteme: les herbes, les proies, les predateurs par le langage C</p> 
+                    </div> 
+
+                    <div class="projet" data-id="4"> 
+                        <img src="image/automate.png" alt="Projet 4"> 
+                        <h3>Automate</h3> 
+                        <p>Creer les automates par le langage Python</p> 
+                    </div> 
+                </div>
+
+                <!-- Modal -->
+                <!-- les détails des projets sont affichés dans une fenêtre superposée, 
+                    évite de charger une nouvelle page pour chaque projet, ce qui est plus rapide 
+                    et conserve l'utilisateur sur la même page.-->
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3 id="modal-title"></h3>
+                        <p id="modal-desc"></p>
+                        <a id="modal-link" href="#" target="_blank">Voir plus</a>
+                    </div>
+                </div>
+            </section> 
+
+            <!--Competences-->       
+            <section id="competences">    
+                <h2>Compétences</h2> 
+
+                <section id="web_coding_skill">  
+                    <!-- 1e competence -->
+                    <div class="skill"> 
+                        <h3> <img src="image/HTML5.png" alt="html" style="width: 65px;"> </h3>  
+                        <div class="progress">
+                            <!-- Niveau de competence ( sur 100 )--> 
+                            <div class="progress-bar" style="width: 90%;"></div> 
+                        </div>
+                    </div>
+                    
+                    <!-- 2e competence -->
+                    <div class="skill">
+                        <h3> <img src="image/CSS.png" alt="html" style="width: 40px;"> </h3> 
+                        <div class="progress">
+                            <!-- Niveau de competence ( sur 100 )-->
+                            <div class="progress-bar" style="width: 85%;"></div> 
+                        </div>
+                    </div>
+
+                    <!-- 3e competence -->
+                    <div class="skill">
+                        <h3> <img src="image/JavaScript-logo.png" alt="html" style="width: 57px;"> </h3>  
+                        <div class="progress">
+                            <!-- Niveau de competence ( sur 100 )-->
+                            <div class="progress-bar" style="width: 70%;"></div> 
+                        </div>
+                    </div> 
+                </section> 
+
+                <section id="general_coding_skill"> 
+                    <!-- 4e competence -->
+                    <div class="skill">
+                        <h3> <img src="image/Java.png" alt="html" style="width: 35px;"> </h3> 
+                        <div class="progress">
+                            <!-- Niveau de competence ( sur 100 )-->
+                            <div class="progress-bar" style="width: 90%;"></div> 
+                        </div>
+                    </div>
+
+                    <!-- 5e competence -->
+                    <div class="skill">
+                        <h3> <img src="image/python.png" alt="html" style="width: 49px;"> </h3> 
+                        <div class="progress">
+                            <!-- Niveau de competence ( sur 100 )-->
+                            <div class="progress-bar" style="width: 85%;"></div> 
+                        </div>
+                    </div>
+
+                    <!-- 6e competence -->
+                    <div class="skill">
+                        <h3> <img src="image/C.png" alt="html" style="width: 55px;"> </h3> 
+                        <div class="progress">
+                            <!-- Niveau de competence ( sur 100 )-->
+                            <div class="progress-bar" style="width: 90%;"></div> 
+                        </div>
+                    </div> 
+                </section> 
+            </section> 
+
+            <!-- Form Contact & Reseaux sociaux --> 
+            <section id="contact">
+                <h1 style="text-align: center;">Contact</h1>     
+
+                <!-- Form contact -->
+                <form id="form-contact">
+                    <label for="nom">Nom : <div id="error-nom" class="error"></div></label> 
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required><br><br>  
+                    
+                    <label for="prenom">Prénom : <div id="error-prenom" class="error"></div></label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Votre prenom" required><br><br>  
+
+                    <label for="email">Email : <div id="error-email" class="error"></div></label>
+                    <input type="text" id="email" name="email" placeholder="Votre email adresse" required><br><br> 
+
+                    <label for="telephone">Téléphone : <div id="error-telephone" class="error"></div></label>
+                    <input type="text" id="telephone" name="telephone" placeholder="Votre numero telephone" required><br><br>   
+
+                    <div id="success-message" class="succes"></div>  
+
+                    <button type="submit">Submit</button> 
+                    <!-- 
+                    <button type="button" onclick="validateForm()">Envoyer</button> 
+                    -->    
+                </form> 
+
+                <!--Lien email-->
+                <p style="text-align: center;"> 
+                    <a href="mailto:tentuilaminh2902@gmail.com" title="Ecrivez moi" style="color: rgb(65, 172, 65);">Cliquez ici pour me contacter via email !</a>  
+                </p> 
+
+                <!-- Reseaux sociax --> 
+                <div class="reseaux-sociaux">
+                    <a href="https://github.com/Daniel-NguyenMinh2902" target="_blank" class="social-link"> 
+                        <img src="image/github.jpeg" alt="GitHub" style="width: 32px;"> 
+                    </a>
+                    <a href="https://www.linkedin.com/in/duc-minh-nguyen-a4b644320/" target="_blank" class="social-link"> 
+                        <img src="image/linkedin.png" alt="LinkedIn" style="width: 32px;"> 
+                    </a>
+                    <a href="https://www.instagram.com/daniel04_29.02/" target="_blank" class="social-link">
+                        <img src="image/instagram.png" alt="Instagram" style="width: 32px;">  
+                    </a> 
+                    <a href="https://www.facebook.com/profile.php?id=100012257196319" target="_blank" class="social-link">
+                        <img src="image/facebook.png" alt="Facebook" style="width: 32px;">  
+                    </a>       
+                </div> 
+            </section>  
+        </main>
+
+        <!-- Dark mode button --> 
+        <button id="toggle-dark-mode">
+            <img src="image/hunters_moon.jpg" alt="moon" style="width: 40px;"> 
+        </button> 
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Duc Minh Nguyen. Tous droits réservés.</p>
+        </footer>
+
+        <script src="script/script.js"></script> 
+    </body>
+</html>
